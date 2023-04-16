@@ -1,0 +1,38 @@
+header {
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.new_book_form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(201, 201, 201);
+    padding: 1rem;
+    line-height: 3rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    margin: auto;
+}
+
+.hidden {
+    display: none;
+}
