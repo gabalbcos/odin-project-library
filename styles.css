@@ -1,11 +1,17 @@
-header {
-    padding: 2rem;
+html {
+    padding: 1rem 2rem;;
 }
+
+
 
 h1 {
     text-align: center;
     font-size: 3rem;
     font-weight: 900;
+}
+
+.add_book{
+    text-align: right;
 }
 
 .new_book_form {
@@ -16,7 +22,6 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(201, 201, 201);
-    padding: 1rem;
     line-height: 3rem;
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
@@ -35,4 +40,34 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+/* library */
+.library {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: .3fr 2fr 1fr 1fr 1fr;
+    border: 2px solid black;
+    height: 15rem;
+    width: 10rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.book_title {
+    font-weight: 800;
+}
+
+.btn_remove {
+    width: 20%;
+    justify-self: right;
 }
