@@ -14,17 +14,20 @@ h1 {
     text-align: right;
 }
 
-.new_book_form {
-    display: flex;
-    flex-direction: column;
+.form_card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(201, 201, 201);
+    box-shadow: 5px 5px 5px black;
+}
+
+.new_book_form {
+    display: flex;
+    flex-direction: column;
     line-height: 3rem;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px black;
 }
 
 .form-control {

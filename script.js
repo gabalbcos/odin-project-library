@@ -13,10 +13,11 @@ let myLibrary = [
 
 // select the form to get the values
 const form = document.getElementById('contact-form');
+const form_card = document.querySelector('.form_card');
 const library = document.querySelector('.library');
 
 // function to create book card
-function createBook() {
+function createBook(array, i) {
   const div_card = document.createElement('div');
   div_card.classList.add('book');
 
@@ -25,23 +26,22 @@ function createBook() {
   btn_remove.textContent = 'x';
   div_card.appendChild(btn_remove);
 
-
   const title = document.createElement('h2');
   title.classList.add('book_title');
-  title.textContent = 'Hello World!'  
+  title.textContent = array[i].title;  
   div_card.appendChild(title);
 
   const author = document.createElement('p');
-  author.textContent = 'Hello World2!';
+  author.textContent = `Author: ${array[i].author}`;
   div_card.appendChild(author);
 
   const pages = document.createElement('p');
-  pages.textContent = 'Hello World!3';
+  pages.textContent = `Pages: ${array[i].pages}`;
   div_card.appendChild(pages);
 
   const btn_read = document.createElement('button');
   btn_read.classList.add('btn_read');
-  btn_read.textContent = 'Hello World!4';
+  btn_read.textContent = 'Read';
   div_card.appendChild(btn_read);
 
   library.appendChild(div_card);
@@ -62,17 +62,25 @@ function addBookToLibrary(event) {
   const formDataObj = {};
   myFormData.forEach((value, key) => (formDataObj[key] = value));
   myLibrary.push(formDataObj);
+
+  createBook(myLibrary, myLibrary.length - 1);
+  form.reset();
 }
+
+
 
 // button to open form
 const FORM = document.querySelector('.new_book_form');
 const BTN_OPEN_FORM = document.querySelector('.add_book');
+const BTN_CLOSE = document.querySelector('.btn_close');
 
 function toggleFormVisibility() {
-  FORM.classList.toggle('hidden');
+  form_card.classList.toggle('hidden');
 }
 
 BTN_OPEN_FORM.addEventListener('click', toggleFormVisibility)
-
+BTN_CLOSE.addEventListener('click', toggleFormVisibility)
 // test
 
+// remove book from array
+const removeBook = myLibrary.filter((book) => book.title !== idToRemove);
