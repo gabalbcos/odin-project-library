@@ -24,6 +24,7 @@ function createBook(array, i) {
   const btn_remove = document.createElement('button');
   btn_remove.classList.add('btn_remove');
   btn_remove.textContent = 'x';
+  btn_remove.setAttribute('onclick', 'selectText(this)');
   div_card.appendChild(btn_remove);
 
   const title = document.createElement('h2');
@@ -82,5 +83,16 @@ BTN_OPEN_FORM.addEventListener('click', toggleFormVisibility)
 BTN_CLOSE.addEventListener('click', toggleFormVisibility)
 // test
 
-// remove book from array
-const removeBook = myLibrary.filter((book) => book.title !== idToRemove);
+
+function selectText(a) {
+  console.log(myLibrary);
+  const nextP = a.nextSibling;
+  nextP.classList.add('green')
+  console.log(nextP.innerText);
+
+  myLibrary = myLibrary.filter(item => item.title !== nextP.innerText);
+  console.log(myLibrary);
+
+  nextP.parentElement.remove();
+
+}
