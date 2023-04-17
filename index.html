@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Orbitron:wght@400;500&family=Pacifico&family=Poller+One&family=Press+Start+2P&family=Prompt&family=Quattrocento&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -14,25 +17,25 @@
     </header>
 
     <main>
-        <button class="add_book">Add Book</button>
+        <button class="add_book btn_submit_style">Add Book</button>
         
         <div class="form_card hidden">
             <button class="btn_close ">X</button>
-            <form id="contact-form" class="new_book_form">
+            <form id="book-form" class="new_book_form">
             
                 <div class="form-control">
                     <label for="title">Book Title</label>
-                    <input id="title" name="title" type="text" />
+                    <input id="title" name="title" type="text" required/>
                 </div>
                 <div class="form-control">
                     <label for="author">Author</label>
-                    <input id="author" name="author" type="text" />
+                    <input id="author" name="author" type="text" required/>
                 </div>
                 <div class="form-control">
                     <label for="pages">Pages</label>
-                    <input id="pages" name="pages" type="number" />
+                    <input id="pages" name="pages" type="number" required/>
                 </div>
-                <button class="btn" type="submit">Add Book</button>
+                <button class="btn_submit btn_submit_style" type="submit">Add Book</button>
             </form>
         </div>
         <div class="library">

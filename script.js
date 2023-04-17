@@ -12,7 +12,7 @@ let myLibrary = [
 ];
 
 // select the form to get the values
-const form = document.getElementById('contact-form');
+const form = document.getElementById('book-form');
 const form_card = document.querySelector('.form_card');
 const library = document.querySelector('.library');
 
@@ -24,7 +24,7 @@ function createBook(array, i) {
   const btn_remove = document.createElement('button');
   btn_remove.classList.add('btn_remove');
   btn_remove.textContent = 'x';
-  btn_remove.setAttribute('onclick', 'selectText(this)');
+  btn_remove.setAttribute('onclick', 'deleteBook(this)');
   div_card.appendChild(btn_remove);
 
   const title = document.createElement('h2');
@@ -41,8 +41,9 @@ function createBook(array, i) {
   div_card.appendChild(pages);
 
   const btn_read = document.createElement('button');
-  btn_read.classList.add('btn_read');
-  btn_read.textContent = 'Read';
+  btn_read.classList.add('btn_read', 'red');
+  btn_read.textContent = 'Not Read';
+  btn_read.setAttribute('onclick', 'toggleRead(this)');
   div_card.appendChild(btn_read);
 
   library.appendChild(div_card);
@@ -84,15 +85,21 @@ BTN_CLOSE.addEventListener('click', toggleFormVisibility)
 // test
 
 
-function selectText(a) {
-  console.log(myLibrary);
-  const nextP = a.nextSibling;
-  nextP.classList.add('green')
-  console.log(nextP.innerText);
-
+function deleteBook(el) {
+  const nextP = el.nextSibling;
   myLibrary = myLibrary.filter(item => item.title !== nextP.innerText);
-  console.log(myLibrary);
-
   nextP.parentElement.remove();
+}
 
+function toggleRead(el) {
+  const buttonRead = el;
+  if (buttonRead.classList.contains("red")){
+  buttonRead.innerText = 'Read';
+  buttonRead.classList.toggle('red');
+  buttonRead.classList.toggle('green');
+  } else {
+  buttonRead.innerText = 'Not Read';
+  buttonRead.classList.toggle('red');
+  buttonRead.classList.toggle('green');
+  }
 }
