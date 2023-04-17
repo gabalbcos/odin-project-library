@@ -23,7 +23,7 @@ function createBook(array, i) {
 
   const btn_remove = document.createElement('button');
   btn_remove.classList.add('btn_remove');
-  btn_remove.textContent = 'x';
+  btn_remove.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>';
   btn_remove.setAttribute('onclick', 'deleteBook(this)');
   div_card.appendChild(btn_remove);
 
