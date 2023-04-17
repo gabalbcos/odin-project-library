@@ -7,7 +7,8 @@
     --darker-grey: rgb(55, 55, 55);
 }
 
-html, * {
+html,
+* {
 
     font-family: 'Quattrocento', serif;
 }
@@ -37,7 +38,7 @@ button {
     color: var(--background);
 }
 
-.add_book{
+.add_book {
     margin: 2rem 0;
     padding: 1rem 2rem;
 }
@@ -72,10 +73,9 @@ button {
 .form-control input {
     border-radius: 5px;
     border: 1px solid var(--dark-grey)
-
 }
 
-.btn_close{
+.btn_close {
     justify-self: right;
     background-color: var(--grey);
     color: var(--background);
@@ -136,7 +136,7 @@ button {
     font-weight: 900;
     border: none;
     padding: 0;
-    margin-bottom: 1rem;   
+    margin-bottom: 1rem;
 }
 
 .btn_read {
@@ -145,7 +145,7 @@ button {
     margin-top: .3rem;
 }
 
-.green{
+.green {
     background-color: green;
 }
 
@@ -153,6 +153,6 @@ button {
     background-color: red;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
